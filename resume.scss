@@ -1,0 +1,238 @@
+$white:#fff;
+$tiffany:rgba(51,171,160,.8);
+$gray:rgb(182, 182, 182);
+$blue_purple:rgba(103,58,183,.6);
+$yellow:rgb(238, 185, 10);
+
+@mixin size($w,$h:$w,$brs:0) {
+  width: $w;
+  height: $h;
+  border-radius: $brs;
+}
+@mixin flex($j:center,$a:center){
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+@mixin abpos($l,$t){
+  position: absolute;
+  left: $l;
+  top: $t;
+}
+*{
+  font-family: "Acme","微軟正黑體";
+  position: relative;
+  border:1px solid rgb(59, 59, 59);
+}
+#goTop{
+  position: fixed;
+  z-index: 10;
+  right:20px;
+  bottom:20px;
+  font-size: 3em;
+  color: $blue_purple;
+  &:hover{
+    cursor: pointer;
+    color:darken($blue_purple,10%);
+  }
+ }
+ 
+::-webkit-scrollbar {
+  width: 6px;
+  left:-100px;
+}
+::-webkit-scrollbar-track {
+  background: #003842; 
+  border-left:1px solid $yellow;
+}
+::-webkit-scrollbar-thumb {
+  background:$yellow; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:$yellow; 
+}
+.main-nav{
+  z-index: 3;
+  @include size(100%,12vh);
+  position: fixed;
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0px 0 20px ;
+   a{
+    text-decoration:none;
+   }
+}
+h4{
+  color:$white;
+  letter-spacing: 10px;
+  text-align: center;
+  font-weight: 200;
+}
+h3{
+  line-height: 40px;
+  display: inline-block;
+  &>a{
+    display:block;
+    height:40px;
+    padding:15px 40px;
+    line-height:40px;
+    color: $tiffany;
+  }
+}
+
+.nav_icon_box{
+  line-height:40px; 
+  margin: 15px 40px;
+  float: right;
+  & .nav_icon{
+    color:$gray;
+    display: inline-block;
+    padding-right:20px;
+    animation: slideIn;
+    font-size: 2rem;
+    &.active,
+    &:hover{
+      color: $tiffany;
+      cursor: pointer;
+    }
+  }
+//    navicon 由右飛入
+  & .nav_icon:nth-child(1){
+    animation-duration:1s;
+  }
+  & .nav_icon:nth-child(2){
+    animation-duration:1.2s;
+  }
+  & .nav_icon:nth-child(3){
+    animation-duration:1.4s;
+  }
+}
+.picture{
+  @include size(100%,150vh);
+}
+// 背景傾斜角度
+.picture-1{
+  background: linear-gradient(-30deg,$tiffany 0,$tiffany 50%,$gray 0) no-repeat center center fixed;
+}
+.picture-2{
+  background: linear-gradient(-45deg,$gray 0,$gray 50%,$tiffany 0) no-repeat center center fixed;
+}
+.picture-3{
+  background: linear-gradient(-30deg,$tiffany 0,$tiffany 50%,$gray 0) no-repeat center center fixed;
+}
+.picture-4{
+  background: linear-gradient(-45deg,$gray 0,$gray 50%,$tiffany 0) no-repeat center center fixed;
+}
+
+.cjz_photo_anigroup{
+  width: 400px;
+  @include abpos(60px,30vh );
+  animation:InLeft 3s;
+  animation-fill-mode:forwards;
+  animation-delay: 6s;
+  // transition:translate(10px,10px) transform 2s 1.5s;
+}
+.button-group{
+  width: 400px;
+  @include flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 20px;
+  top: 30vh;
+   &,.graphic_block,.portfolio,.video{
+     color:$white;
+   }
+}
+button{
+  margin-right: 20px;
+  border: none;
+  outline: none;
+  line-height: 2.5rem;
+  background: $blue_purple;
+  text-align: center;
+  @include size(100px,100px,50%);
+  animation: up_down 6s infinite;
+  // animation: living 3s linear ;
+  & a{
+    letter-spacing: .5rem;
+    color:$white;
+  }
+  &:hover{
+    background: darken($blue_purple,10%);
+    transition: all .5s; 
+    cursor: pointer;
+  }
+}
+
+.design_pics {
+  width: 85%;
+  margin: 0px auto;
+  padding-top: 7%;
+  @include flex;
+  flex-wrap: wrap;
+  & figure{ 
+    overflow: hidden;
+    margin:5%;
+    padding: 6px;
+    background:$white;
+    border: 2px solid $white;
+    @include size(180px,180px,50%);
+    margin-bottom: -5px;
+    &:hover{
+      animation-name: jello;
+      animation-duration: 2s;
+    }
+    &:hover figcaption{
+      transform: translateY(130px);
+      cursor: pointer;
+    }
+  }
+}
+figcaption{
+    @include size(190px,150px);
+    @include abpos(0,0);
+    z-index: 1;
+    background:rgba(155, 155, 153, 0.9);
+    color:$white;
+    transition: all .5s;
+    transform: translateY(400px);
+    p{
+      text-align: center;
+      padding-top: 10px;
+    }
+}
+.image-link img{
+  @include size(100%);
+  &:hover{
+    transform: scale(1.2);
+    -webkit-filter: blur(1px); 
+    filter: blur(1px);
+    // -webkit-filter: grayscale(50%); 
+    // filter: grayscale(50%);
+    transition: all .3s;
+  }
+}
+#wood_logo{
+  border-radius: 50%;
+}
+.video_box{
+  width: 85%;
+  margin:0px auto;
+  padding-top: 10%;
+  @include flex; 
+  flex-wrap: wrap;
+  & .video_items{
+   padding: 20px;
+  }
+}
+footer{
+  height: 20vh;
+  background: #333;
+  p{
+    font-size: 14px;
+    color: $white;
+    text-align: center;
+    padding-top: 30px;
+  }
+}
