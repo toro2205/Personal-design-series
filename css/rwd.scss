@@ -42,9 +42,6 @@ $yellow:rgb(238, 185, 10);
   h3{
     margin-left: calc(50% - 60px);
   }
-  h3 a{
-    color: lightgreen;
-  }
   ul{
     float: none;
     text-align: center;
@@ -56,11 +53,31 @@ $yellow:rgb(238, 185, 10);
 }
 @media screen and (max-width: 768px){
   .design_pics {
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 7%;
     @include flex;
     flex-wrap: wrap;
-    & figure{ 
-      @include size(150px,150px,50%);
-      margin-top: 10%;
+    & figure{   
+      overflow: hidden;
+      margin:15% 3%;
+      padding: 6px;
+      background:$white;
+      border: 2px solid $white;
+      @include size(140px,140px,50%);
+      margin-bottom: -5px;
+      &:hover figcaption{
+        transform: translateY(110px);
+        cursor: pointer;
+      }
     }
   }
+  figcaption{
+    @include size(190px,150px);
+    @include abpos(0,0);
+    p{  
+      padding-right: 33px;
+      font-size: 12px;
+    }
+}
 }

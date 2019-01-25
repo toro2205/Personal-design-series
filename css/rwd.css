@@ -8,9 +8,6 @@
   h3 {
     margin-left: calc(50% - 60px);
   }
-  h3 a {
-    color: lightgreen;
-  }
   ul {
     float: none;
     text-align: center;
@@ -25,6 +22,9 @@
 
 @media screen and (max-width: 768px) {
   .design_pics {
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 7%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -38,10 +38,32 @@
         flex-wrap: wrap;
   }
   .design_pics figure {
-    width: 150px;
-    height: 150px;
+    overflow: hidden;
+    margin: 15% 3%;
+    padding: 6px;
+    background: #fff;
+    border: 2px solid #fff;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    margin-top: 10%;
+    margin-bottom: -5px;
+  }
+  .design_pics figure:hover figcaption {
+    -webkit-transform: translateY(110px);
+            transform: translateY(110px);
+    cursor: pointer;
+  }
+  figcaption {
+    width: 190px;
+    height: 150px;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  figcaption p {
+    padding-right: 33px;
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=rwd.css.map */

@@ -173,38 +173,4 @@
             transform: scale3d(1, 1, 1);
   }
 }
-
-@-webkit-keyframes falling {
-  0%, 100% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  0% {
-    -webkit-transform: translate(100px, 0);
-    transform: translate(100px, 0);
-  }
-  100% {
-    -webkit-transform: translate(0px, 200px);
-    transform: translate(0px, 200px);
-  }
-}
-
-@keyframes falling {
-  0%, 100% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  0% {
-    -webkit-transform: translate(100px, 0);
-    transform: translate(100px, 0);
-  }
-  100% {
-    -webkit-transform: translate(0px, 200px);
-    transform: translate(0px, 200px);
-  }
-}
 /*# sourceMappingURL=ani.css.map */
