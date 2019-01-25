@@ -130,17 +130,13 @@ h3 > a {
   background: linear-gradient(-45deg, #b6b6b6 0, #b6b6b6 50%, rgba(51, 171, 160, 0.8) 0) no-repeat center center fixed;
 }
 
-.cjz_photo_anigroup {
-  width: 400px;
+.cjz_photo_ingroup {
+  width: 300px;
   position: absolute;
-  left: 60px;
+  left: 28px;
   top: 30vh;
   -webkit-animation: InLeft 3s;
           animation: InLeft 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
 }
 
 .button-group {

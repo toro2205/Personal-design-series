@@ -125,13 +125,10 @@ h3{
   background: linear-gradient(-45deg,$gray 0,$gray 50%,$tiffany 0) no-repeat center center fixed;
 }
 
-.cjz_photo_anigroup{
-  width: 400px;
-  @include abpos(60px,30vh );
+.cjz_photo_ingroup{
+  width: 300px;
+  @include abpos(28px,30vh );
   animation:InLeft 3s;
-  animation-fill-mode:forwards;
-  animation-delay: 6s;
-  // transition:translate(10px,10px) transform 2s 1.5s;
 }
 .button-group{
   width: 400px;
