@@ -27,7 +27,7 @@
   <div class="main-wrapper">
   <div id="home">
     <div  class="picture picture-1">
-      <div class="cjz_photo_anigroup">
+      <div class="cjz_photo_ingroup">
         <img src="images/cjz.svg" alt="CJ照片">
       </div>      
       <div class="button-group">
